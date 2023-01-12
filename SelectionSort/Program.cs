@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Diagnostics;
+using static Sorting;
+using static Infrastructure;
+int[] array = CreateArray(10);
+PrintArray(array);
+Stopwatch sw = new();
+sw.Start();
+SelectionSort(array);
+sw.Stop();
+Console.WriteLine($"time = {sw.ElapsedMilliseconds}");
+PrintArray(array);
