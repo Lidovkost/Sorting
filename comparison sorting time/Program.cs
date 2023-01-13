@@ -1,0 +1,14 @@
+﻿using System.Diagnostics;
+using static SortingThis;
+using static InfrastructureThis;
+Stopwatch sw = new();
+int[] selectionArray = 10000.CreateArray(1, 10);
+int[] bubbleArray = selectionArray.EquatingArray();
+sw.Start();
+bubbleArray.SortBubble();
+sw.Stop();
+Console.WriteLine($"SortBubble time = {sw.ElapsedMilliseconds}");
+sw.Restart();
+selectionArray.SortSelection();
+sw.Stop();
+Console.WriteLine($"SortSelection time = {sw.ElapsedMilliseconds}");
