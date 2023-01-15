@@ -2,8 +2,9 @@
 using static SortingThis;
 using static InfrastructureThis;
 Stopwatch sw = new();
-int[] selectionArray = 10000.CreateArray(1, 10);
+int[] selectionArray = 100000.CreateArray(1, 10);
 int[] bubbleArray = selectionArray.EquatingArray();
+int[] quickSort = selectionArray.EquatingArray();
 sw.Start();
 bubbleArray.SortBubble();
 sw.Stop();
@@ -12,3 +13,7 @@ sw.Restart();
 selectionArray.SortSelection();
 sw.Stop();
 Console.WriteLine($"SortSelection time = {sw.ElapsedMilliseconds}");
+sw.Restart();
+quickSort.SortQuick(0, quickSort.Length-1);
+sw.Stop();
+Console.WriteLine($"Quick Sort time = {sw.ElapsedMilliseconds}");
