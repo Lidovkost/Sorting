@@ -1,3 +1,4 @@
+
 public static class Sorting
 {
     /// <summary>
@@ -125,11 +126,16 @@ private static int GetPivotIndex(int[] array, int minIndex, int maxIndex)
     }
     return array;
   }
+  private static object locker = new object();
   private static void CountingSortForThread(int[] originalArray, int[] supportArray, int startPos, int endPos)
   {
     for(int i = startPos; i<endPos; i++)
     {
-        supportArray[originalArray[i]]++;
+        lock(locker)
+        {
+          supportArray[originalArray[i]]++;  
+        }
+        
     }
   }
   public static int[] CountingSortThread(this int[] array, int threadsNumbers = 4)

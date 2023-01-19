@@ -1,4 +1,4 @@
-﻿int[] selectionArray = 10000.CreateArray(1, 10);
+﻿int[] selectionArray = 100000.CreateArray(1, 5);
 int[] bubbleArray = selectionArray.EquatingArray();
 int[] quickSort = selectionArray.EquatingArray();
 int[] standartSort = selectionArray.EquatingArray();
