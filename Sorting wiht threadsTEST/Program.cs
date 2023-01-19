@@ -1,0 +1,14 @@
+﻿int[] selectionArray = 10000.CreateArray(1, 10);
+int[] bubbleArray = selectionArray.EquatingArray();
+int[] quickSort = selectionArray.EquatingArray();
+int[] standartSort = selectionArray.EquatingArray();
+int[] countingSort = selectionArray.EquatingArray();
+int[] countingSortTread = selectionArray.EquatingArray();
+Array.Sort(standartSort);
+// quickSort.SortQuick(0, quickSort.Length-1);
+countingSort.CountingSort();
+countingSortTread.CountingSortThread(4);
+bool k = countingSortTread.СomparingArrays(standartSort);
+Console.WriteLine($"стандартная сорт. и сорт. подсчетом(с потоками) совпадает - {k}");
+k = countingSort.СomparingArrays(standartSort);
+Console.WriteLine($"стандартная сорт. и сорт. подсчетом(без потоков) совпадает - {k}");

@@ -39,19 +39,17 @@ public static class InfrastructureThis
         }
         return copyArray;
     }
-
     public static bool СomparingArrays(this int[] array1, int[] array2)
     {
         int k = 0;
-        for(int i = 0; i< Array1.Length; i++)
+        for(int i = 0; i< array1.Length; i++)
         {
            if(array1[i] != array2[i])
            {
                 k = 1;
            }
         }
-        if(k = 1) return false;
+        if(k == 1) return false;
         else return true;
     }
 }
-
